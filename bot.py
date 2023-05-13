@@ -2,6 +2,8 @@ import logging
 import asyncio
 from discord.ext import commands
 import discord
+import os
+from dotenv import load_dotenv
 
 _log = logging.getLogger('discord.py')
 
@@ -87,4 +89,5 @@ class AntiGhostBot(discord.ext.commands.Bot):
 
 if __name__ == "__main__":
     client = AntiGhostBot(command_prefix="!", intents=discord.Intents().all())
-    client.run("")
+    load_dotenv('sample.env')
+    client.run(os.getenv('BOT-TOKEN'))
