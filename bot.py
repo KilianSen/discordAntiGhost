@@ -16,7 +16,8 @@ async def get_all_active_voices(bot):
     return set(users)
 
 
-async def get_all_voice_members(bot: discord.Client) -> dict[discord.Guild, dict[discord.VoiceChannel, list[discord.Member]]]:
+async def get_all_voice_members(bot: discord.Client) -> \
+        dict[discord.Guild, dict[discord.VoiceChannel, list[discord.Member]]]:
     """Get all voice channels and their members on all guilds the bot can view."""
     voice_channels = {}
     for guild in bot.guilds:
@@ -73,6 +74,7 @@ class AntiGhostBot(discord.ext.commands.Bot):
 
     async def check_lurkers(self):
         while self.timer_thread_r:
+            # noinspection PyBroadException
             try:
                 lurkers = await get_all_ghosts(self)
                 if lurkers:
