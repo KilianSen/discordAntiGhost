@@ -57,7 +57,7 @@ async def get_all_ghosts(bot):
 
 async def kick_ghost(lurkers):
     for member in lurkers:
-        await member.send("Being a ghost. You have been kicked from the server.")
+        await member.send("Being a ghost is not allowed on this server. You have been kicked from the server.")
         await member.kick(reason="Being a ghost")
 
 
