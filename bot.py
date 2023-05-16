@@ -57,8 +57,8 @@ async def get_all_ghosts(bot):
 
 async def kick_ghost(lurkers):
     for member in lurkers:
-        await member.send("Lurking in this channel is prohibited. You have been kicked from the server.")
-        await member.kick(reason="Lurking in a prohibited channel")
+        await member.send("Being a ghost. You have been kicked from the server.")
+        await member.kick(reason="Being a ghost")
 
 
 class AntiGhostBot(discord.ext.commands.Bot):
